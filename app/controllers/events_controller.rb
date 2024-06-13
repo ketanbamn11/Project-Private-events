@@ -1,8 +1,12 @@
 class EventsController < ApplicationController
   before_action :set_current_user, if: :user_signed_in?, only: [:index]
-  before_action :set_current_user, only: [:create]
+  before_action :set_current_user, only: [:new, :create]
   def index
     @events = Event.all
+  end
+
+  def new
+    @event = @current_user.created_events.new()
   end
 
   def create
