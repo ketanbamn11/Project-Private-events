@@ -1,8 +1,12 @@
 class EventsController < ApplicationController
-  before_action :set_current_user, if: :user_signed_in?, only: [:index]
-  before_action :set_current_user, only: [:new, :create]
+  before_action :set_current_user, if: :user_signed_in?, only: [:index, :new, :show, :create]
+
   def index
     @events = Event.all
+  end
+
+  def show
+    @event = Event.find_by(id: params[:id])
   end
 
   def new

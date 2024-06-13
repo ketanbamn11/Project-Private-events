@@ -1,0 +1,14 @@
+<% if user_signed_in? %>
+  <%= link_to "Sign out", destroy_user_session_path, method: :delete %><br/>
+  <%= link_to "My Events", user_path(@current_user) %>
+<% else %>
+  <%= link_to "Sign in", new_user_session_path %>
+<% end %>
+
+<ul>
+  <li>
+    <strong><%= @event.title %></strong>
+    <p><%= @event.description %></p>
+    <p>Event Date: <%= @event.event_date %></p>
+  </li><br/><br/>
+</ul>
