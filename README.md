@@ -24,9 +24,6 @@ This README document provides information on how to set up and run the applicati
      bundle install
      ```
 
-  
-     ```
-
 ## Database creation
 
 Set up the database:
