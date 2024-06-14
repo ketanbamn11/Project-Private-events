@@ -30,3 +30,11 @@ Set up the database:
 
      rails db:create
      rails db:migrate
+
+## Server Start
+
+Starting of server: 
+   ```bash
+    rails server
+
+  
