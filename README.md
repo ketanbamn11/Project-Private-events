@@ -44,9 +44,12 @@ Starting of server:
 
 
 ## Warmup: thinking data first
+Lay out the data architecture you’d need to implement to build the following scenarios:
 
 1. [A site for pet-sitting](https://github.com/ketanbamn11/Project-Private-events/blob/main/public/pet-sitting.md)
 
+2. [Dinner party invitation](https://github.com/ketanbamn11/Project-Private-events/blob/main/public/dinner-party.md)
 
+3. [Social Network](https://github.com/ketanbamn11/Project-Private-events/blob/main/public/social_network.md) 
 
   
