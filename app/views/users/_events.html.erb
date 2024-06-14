@@ -1,13 +1,36 @@
 <% if user_signed_in? %>
   <%= link_to "Sign out", destroy_user_session_path, method: :delete %><br/>
   <%= link_to "Back", root_path %>
-  <ul>
-    <% @events.each do |event| %>
-      <li>
-        <strong><%= event.title %></strong>
-        <p><%= event.description %></p>
-        <p>Event Date: <%= event.event_date %></p>
-      </li><br/><br/>
-    <% end %>
-  </ul>
+
+  <div class="events-container">
+    <div class="events-box">
+      <h2>Past Events</h2>
+      <ul>
+        <% @events&.each do |event| %>
+          <% if event&.event_date < Date.today %>
+            <li>
+              <strong><%= event.title %></strong>
+              <p><%= event.description %></p>
+              <p>Event Date: <%= event.event_date %></p>
+            </li><br/><br/>
+          <% end %>
+        <% end %>
+      </ul>
+    </div>
+
+    <div class="events-box">
+      <h2>Upcoming Events</h2>
+      <ul>
+        <% @events&.each do |event| %>
+          <% if event&.event_date >= Date.today %>
+            <li>
+              <strong><%= event.title %></strong>
+              <p><%= event.description %></p>
+              <p>Event Date: <%= event.event_date %></p>
+            </li><br/><br/>
+          <% end %>
+        <% end %>
+      </ul>
+    </div>
+  </div>
 <% end %>
