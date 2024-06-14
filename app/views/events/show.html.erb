@@ -1,29 +1,35 @@
-<ul>
-  <li>
-    <h4>Event</h4>
-    <strong><%= @event.title %></strong>
-    <p><%= @event.description %></p>
-    <p>Event Date: <%= @event.event_date %></p>
-    <% if @event_joined.empty? %>
-      <%= form_with url: event_event_attendees_path(@event), method: :post do %>
-        <%= submit_tag 'Join Event', class: 'btn btn-primary' %>
-      <% end %>
-    <% else %>
-      <%= form_with url: event_event_attendee_path(@event, current_user), method: :delete do %>
-        <%= submit_tag 'Leave Event', class: 'btn btn-danger' %>
-      <% end %>
-    <% end %>
-  </li><br/><br/>
-  <li>
-    <strong>Attendees:</strong>
-    <% if @attendees.any? %>
-      <ul>
-        <% @attendees.each do |attendee| %>
-          <li><%= attendee.email %></li>
+<div class="container mt-4">
+  <div class="card mb-4">
+    <div class="card-body">
+      <h4 class="card-title">Event</h4>
+      <h5 class="card-subtitle mb-2 text-muted"><%= @event.title %></h5>
+      <p class="card-text"><%= @event.description %></p>
+      <p class="card-text"><small class="text-muted">Event Date: <%= @event.event_date %></small></p>
+
+      <% if @event_joined.empty? %>
+        <%= form_with url: event_event_attendees_path(@event), method: :post, local: true do %>
+          <%= submit_tag 'Join Event', class: 'btn btn-primary' %>
         <% end %>
-      </ul>
-    <% else %>
-      <p>No attendees yet.</p>
-    <% end %>
-  </li>
-</ul>
+      <% else %>
+        <%= form_with url: event_event_attendee_path(@event, current_user), method: :delete, local: true do %>
+          <%= submit_tag 'Leave Event', class: 'btn btn-danger' %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">Attendees</h5>
+      <% if @attendees.any? %>
+        <ul class="list-group list-group-flush">
+          <% @attendees.each do |attendee| %>
+            <li class="list-group-item"><%= attendee.email %></li>
+          <% end %>
+        </ul>
+      <% else %>
+        <p class="card-text">No attendees yet.</p>
+      <% end %>
+    </div>
+  </div>
+</div>

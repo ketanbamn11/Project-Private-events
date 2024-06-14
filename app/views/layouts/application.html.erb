@@ -8,24 +8,14 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
   </head>
 
   <body>
-    <header>
-      <nav class="header-nav">
-        <ul class="header-links">
-          <li><%= link_to 'Home', root_path %></li>
-          <% if user_signed_in? %>
-            <li><%= link_to "Events Created", user_path(@current_user) %></li>
-            <li><%= link_to "My Events", user_my_attended_event_path(@current_user) %></li>
-            <li><%= link_to "Create New Event", new_event_path %></li>
-            <li><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
-          <% else %>
-            <li><%= link_to "Sign in", new_user_session_path %></li>
-          <% end %>
-        </ul>
-      </nav>
-    </header>
-    <%= yield %>
+    <div>
+      <%= render 'layouts/header' %>
+      <%= yield %>
+    </div>
   </body>
 </html>

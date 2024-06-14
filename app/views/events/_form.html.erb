@@ -1,24 +1,26 @@
-<%= form_with(model: @event, local: true) do |form| %>
-  <%= form.hidden_field :authenticity_token, value: form_authenticity_token %>
+  <div class="container">
+  <%= form_with(model: @event, local: true) do |form| %>
+    <%= form.hidden_field :authenticity_token, value: form_authenticity_token %>
 
-  <div>
-    <%= form.label :title %><br>
-    <%= form.text_field :title, id: "event_title" %>
-  </div>
+    <div class="mb-3">
+      <%= form.label :title, class: "form-label" %>
+      <%= form.text_field :title, id: "event_title", class: "form-control", placeholder: "Enter event title" %>
+    </div>
 
-  <div>
-    <%= form.label :description %><br>
-    <%= form.text_area :description, id: "event_description" %>
-  </div>
+    <div class="mb-3">
+      <%= form.label :description, class: "form-label" %>
+      <%= form.text_area :description, id: "event_description", class: "form-control", placeholder: "Enter event description" %>
+    </div>
 
-  <div>
-    <%= form.label :event_date %><br>
-    <%= form.date_field :event_date, id: "event_event_date" %>
-  </div>
+    <div class="mb-3">
+      <%= form.label :event_date, class: "form-label" %>
+      <%= form.date_field :event_date, id: "event_event_date", class: "form-control" %>
+    </div>
 
-  <%= form.hidden_field :creator_id, value: @current_user.id %>
+    <%= form.hidden_field :creator_id, value: @current_user.id %>
 
-  <div>
-    <%= form.submit form.object.new_record? ? 'Create Event' : 'Update Event', data: { disable_with: form.object.new_record? ? 'Creating Event...' : 'Updating Event...' } %>
-  </div>
-<% end %>
+    <div class="mb-3">
+      <%= form.submit form.object.new_record? ? 'Create Event' : 'Update Event', class: "btn btn-primary", data: { disable_with: form.object.new_record? ? 'Creating Event...' : 'Updating Event...' } %>
+    </div>
+  <% end %>
+</div>
