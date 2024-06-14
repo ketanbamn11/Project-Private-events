@@ -7,6 +7,7 @@
 
 <ul>
   <li>
+    <h4>Event</h4>
     <strong><%= @event.title %></strong>
     <p><%= @event.description %></p>
     <p>Event Date: <%= @event.event_date %></p>
@@ -16,4 +17,16 @@
       <% end %>
     <% end %>
   </li><br/><br/>
+  <li>
+    <strong>Attendees:</strong>
+    <% if @attendees.any? %>
+      <ul>
+        <% @attendees.each do |attendee| %>
+          <li><%= attendee.email %></li>
+        <% end %>
+      </ul>
+    <% else %>
+      <p>No attendees yet.</p>
+    <% end %>
+  </li>
 </ul>
