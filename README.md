@@ -41,4 +41,12 @@ Starting of server:
    ```bash
     rails server
 
+
+
+## Warmup: thinking data first
+
+1. [A site for pet-sitting](https://github.com/ketanbamn11/Project-Private-events/blob/main/public/pet-sitting.md)
+
+
+
   
