@@ -7,7 +7,7 @@ class UsersController < ApplicationController
   end
 
   def my_attended_event
-    @attended_events = current_user.attended_events
+    @events = current_user.attended_events
   end
 
   private
