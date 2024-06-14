@@ -10,5 +10,10 @@
     <strong><%= @event.title %></strong>
     <p><%= @event.description %></p>
     <p>Event Date: <%= @event.event_date %></p>
+    <% if @event_joined.empty? %>
+      <%= form_with url: event_event_attendees_path(@event), method: :post do %>
+        <%= submit_tag 'Join Event', class: 'btn btn-primary' %>
+      <% end %>
+    <% end %>
   </li><br/><br/>
 </ul>
