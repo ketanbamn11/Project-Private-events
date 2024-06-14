@@ -4,7 +4,9 @@ Rails.application.routes.draw do
   devise_scope :user do  
     get '/users/sign_out' => 'devise/sessions#destroy'     
   end
-  resources :users
+  resources :users do
+    get '/my_attended_event' => 'users#my_attended_event'
+  end
   resources :events do
     resources :event_attendees, only: [:create, :destroy]
   end

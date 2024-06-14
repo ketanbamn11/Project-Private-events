@@ -1,18 +1,15 @@
-<h1>Events</h1>
+<h1>Events Created by Me</h1>
 
 <% if user_signed_in? %>
   <%= link_to "Sign out", destroy_user_session_path, method: :delete %><br/>
   <%= link_to "Back", root_path %>
-<% else %>
-  <%= link_to "Sign in", new_user_session_path %>
+  <ul>
+    <% @events.each do |event| %>
+      <li>
+        <strong><%= event.title %></strong>
+        <p><%= event.description %></p>
+        <p>Event Date: <%= event.event_date %></p>
+      </li><br/><br/>
+    <% end %>
+  </ul>
 <% end %>
-
-<ul>
-  <% @events.each do |event| %>
-    <li>
-      <strong><%= event.title %></strong>
-      <p><%= event.description %></p>
-      <p>Event Date: <%= event.event_date %></p>
-    </li><br/><br/>
-  <% end %>
-</ul>
