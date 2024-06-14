@@ -8,6 +8,10 @@
       <%= form_with url: event_event_attendees_path(@event), method: :post do %>
         <%= submit_tag 'Join Event', class: 'btn btn-primary' %>
       <% end %>
+    <% else %>
+      <%= form_with url: event_event_attendee_path(@event, current_user), method: :delete do %>
+        <%= submit_tag 'Leave Event', class: 'btn btn-danger' %>
+      <% end %>
     <% end %>
   </li><br/><br/>
   <li>
