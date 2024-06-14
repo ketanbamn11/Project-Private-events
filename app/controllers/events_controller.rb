@@ -2,7 +2,8 @@ class EventsController < ApplicationController
   before_action :set_current_user, if: :user_signed_in?, only: [:index, :new, :show, :create]
 
   def index
-    @events = Event.all
+    @past_events = Event.past
+    @upcoming_events = Event.upcoming
   end
 
   def show
