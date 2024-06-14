@@ -42,4 +42,17 @@
   .events-box li strong {
     display: block;
   }
+  .header-nav {
+    text-align: left; /* Aligns all items to the right */
+  }
   
+  .header-links {
+    list-style-type: none; /* Removes default list styling */
+    padding: 0; /* Remove default padding */
+  }
+  
+  .header-links li {
+    display: inline-block; /* Display list items horizontally */
+    margin-right: 10px; /* Adds space between list items */
+  }
+    
