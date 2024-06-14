@@ -40,7 +40,7 @@ Set up the database:
 Starting of server: 
    ```bash
     rails server
-
+```
 
 
 ## Warmup: thinking data first
