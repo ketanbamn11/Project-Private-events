@@ -1,24 +1,36 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This README document provides information on how to set up and run the application.
 
-Things you may want to cover:
+## Ruby version
 
-* Ruby version
+* Ruby version used in this project: `3.2.2`
+* Rails version used in this project: `6.1.7`
 
-* System dependencies
+## Configuration
 
-* Configuration
+* Configuration steps:
 
-* Database creation
+  1. Clone the repository:
 
-* Database initialization
+     ```bash
+     git clone https://github.com/ketanbamn11/Project-Private-events.git
+     cd Project-Private-events
+     ```
 
-* How to run the test suite
+  2. Install dependencies:
 
-* Services (job queues, cache servers, search engines, etc.)
+     ```bash
+     bundle install
+     ```
 
-* Deployment instructions
+  
+     ```
 
-* ...
+## Database creation
+
+Set up the database:
+
+     ```bash
+     rails db:create
+     rails db:migrate
