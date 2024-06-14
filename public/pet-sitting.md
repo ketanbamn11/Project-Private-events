@@ -47,61 +47,63 @@
 - A review is associated with one booking (many-to-one): Reviews -> Bookings (booking_id)
 
 
+
+### ER Diagram
 +---------------+
-|  Users        |
+| Users |
 +---------------+
-|  id (PK)      |
-|  username     |
-|  email        |
-|  password     |
-|  phone_number |
-|  address      |
+| id (PK) |
+| username |
+| email |
+| password |
+| phone_number |
+| address |
 +---------------+
-       |
-       |
-       v
+|
+|
+v
 +---------------+
-|  Pets         |
+| Pets |
 +---------------+
-|  id (PK)      |
-|  name         |
-|  species      |
-|  breed        |
-|  age          |
-|  owner_id (FK)|
+| id (PK) |
+| name |
+| species |
+| breed |
+| age |
+| owner_id (FK) |
 +---------------+
-       |
-       |
-       v
+|
+|
+v
 +---------------+
-|  PetSitters   |
+| PetSitters |
 +---------------+
-|  id (PK)      |
-|  user_id (FK) |
-|  experience   |
-|  availability |
+| id (PK) |
+| user_id (FK) |
+| experience |
+| availability |
 +---------------+
-       |
-       |
-       v
+|
+|
+v
 +---------------+
-|  Bookings     |
+| Bookings |
 +---------------+
-|  id (PK)      |
-|  pet_id (FK)  |
-|  pet_sitter_id(FK)|
-|  start_date   |
-|  end_date     |
-|  status       |
+| id (PK) |
+| pet_id (FK) |
+| pet_sitter_id (FK) |
+| start_date |
+| end_date |
+| status |
 +---------------+
-       |
-       |
-       v
+|
+|
+v
 +---------------+
-|  Reviews      |
+| Reviews |
 +---------------+
-|  id (PK)      |
-|  booking_id (FK)|
-|  rating       |
-|  review_text  |
+| id (PK) |
+| booking_id (FK) |
+| rating |
+| review_text |
 +---------------+
