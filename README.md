@@ -28,6 +28,6 @@ This README document provides information on how to set up and run the applicati
 
 Set up the database:
 
-     ```bash
+     ```
      rails db:create
      rails db:migrate
