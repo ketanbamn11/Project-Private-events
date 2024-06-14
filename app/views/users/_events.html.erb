@@ -9,6 +9,9 @@
               <strong><%= link_to event.title, event_path(event) %></strong>
               <p><%= event.description %></p>
               <p>Event Date: <%= event.event_date %></p>
+              <% if @current_user.id == event.creator_id %>
+                <%= button_to "Delete Event", event_path(event), method: :delete, data: { confirm: "Are you sure you want to delete this event?" }, class: "delete-event-button" %>
+              <% end %>
             </li><br/><br/>
           <% end %>
         <% end %>
@@ -24,6 +27,9 @@
               <strong><%= link_to event.title, event_path(event) %></strong>
               <p><%= event.description %></p>
               <p>Event Date: <%= event.event_date %></p>
+              <% if @current_user.id == event.creator_id %>
+                <%= button_to "Delete Event", event_path(event), method: :delete, data: { confirm: "Are you sure you want to delete this event?" }, class: "delete-event-button" %>
+              <% end %>
             </li><br/><br/>
           <% end %>
         <% end %>

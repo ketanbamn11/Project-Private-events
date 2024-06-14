@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-  before_action :set_current_user, if: :user_signed_in?, only: [:index, :new, :show, :create]
+  before_action :set_current_user, if: :user_signed_in?, only: [:index, :new, :show, :create, :destroy]
 
   def index
     @past_events = Event.past
@@ -23,6 +23,17 @@ class EventsController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
+  end
+
+  def destroy
+    @event = Event.find_by(id: params[:id])
+    if @event && @event.creator_id == @current_user.id
+      @event.destroy!
+      flash[:notice] = "Event deleted successfully."
+    else
+      flash[:alert] = "You are not authorized to delete this event."
+    end
+    redirect_to user_path(@current_user)
   end
 
   private
