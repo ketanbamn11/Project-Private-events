@@ -50,4 +50,4 @@
 
 ### ER Diagram
 
-![ER Diagram](Screenshot from 2024-06-14 18-31-29.png)
+![ER Diagram](Screenshot%20from%202024-06-14%2018-31-29.png)
