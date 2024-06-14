@@ -1,4 +1,4 @@
-<%= form_with(model: @event, url: events_path, local: true) do |form| %>
+<%= form_with(model: @event, local: true) do |form| %>
   <%= form.hidden_field :authenticity_token, value: form_authenticity_token %>
 
   <div>
@@ -19,6 +19,6 @@
   <%= form.hidden_field :creator_id, value: @current_user.id %>
 
   <div>
-    <%= form.submit 'Create Event', data: { disable_with: 'Creating Event...' } %>
+    <%= form.submit form.object.new_record? ? 'Create Event' : 'Update Event', data: { disable_with: form.object.new_record? ? 'Creating Event...' : 'Updating Event...' } %>
   </div>
 <% end %>
