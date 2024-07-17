@@ -1,8 +1,8 @@
 class EventAttendeesController < ApplicationController
   before_action :authenticate_user!
+  before_action :set_event
 
   def create
-    @event = Event.find(params[:event_id])
     @event_attendee = @event.event_attendances.build(user: current_user)
 
     if @event_attendee.save
@@ -13,7 +13,6 @@ class EventAttendeesController < ApplicationController
   end
 
   def destroy
-    @event = Event.find(params[:event_id])
     @event_attendee = @event.event_attendances.find_by(user: current_user)
 
     if @event_attendee&.destroy
@@ -21,5 +20,11 @@ class EventAttendeesController < ApplicationController
     else
       redirect_to @event, alert: 'There was an error leaving the event.'
     end
+  end
+
+  private
+
+  def set_event
+    @event = Event.find(params[:event_id])
   end
 end
