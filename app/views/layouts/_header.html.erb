@@ -12,10 +12,10 @@
           </li>
           <% if user_signed_in? %>
             <li class="nav-item">
-              <%= link_to "Events Created", user_path(@current_user), class: "nav-link" %>
+              <%= link_to "Events Created", user_path(current_user), class: "nav-link" %>
             </li>
             <li class="nav-item">
-              <%= link_to "My Events", user_my_attended_event_path(@current_user), class: "nav-link" %>
+              <%= link_to "My Events", user_my_attended_event_path(current_user), class: "nav-link" %>
             </li>
             <li class="nav-item">
               <%= link_to "Create New Event", new_event_path, class: "nav-link" %>
